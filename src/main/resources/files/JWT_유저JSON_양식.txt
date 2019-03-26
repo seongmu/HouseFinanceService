@@ -23,7 +23,7 @@
 	"email":"tomas@grokonez.com",
 	"role":["admin"],
 	"password":"123456789",
-	"userid":"1"
+	"userid":"thomas1"
 }						
 
 // 로그인 json 3개 : POST 로 전송할때 사용
@@ -42,5 +42,5 @@
 {
 	"username":"tomasgkz",	
 	"password":"123456789",
-	"userid":"1"
+	"userid":"thomas1"
 }
