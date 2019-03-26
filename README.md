@@ -177,8 +177,10 @@
       - URL : localhost:8080/house/auth/refresh
       
       - 위의 로그인과 나머지는 일치하나 Authorization 에 "Bearer Token " + "위의 로그인에서 나온토큰" 을 입력 (참고로 Token 뒤에 공백 한칸)
+      
          ex) Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYWNrMSIsImlhdCI6MTU1MzQ2NzUzMiwiZXhwIjoxNTUzNTUzOTMyfQ.ATASD2R5bsWBV2YwtmL1yHLRE6Fe-aPu7BTHu9rYNZNt232DGFiu1zgUMu2Bo1AY-3HpuBsBRn6-urf6DE29UA
-   
 
-
+4. 과제물 후기
    
+   - jpa(하이버네이트) 부터 단위테스트까지 그리고 jwt 까지, 테스트를 하기 위해서 설치한 postman 과 github 사이트에 업로드 하기 위한 설정 등 그외에도 과제물을 하기 위해 많은 조사와 공부를 해야했습니다. 솔직히 어려웠지만 후회는 없을듯 합니다. 일주일간 너무 많은것들 배웠고 공부하게 되었습니다. 떨어지게 되면 아쉬움은 남겠지만, 상실이나 패배에서 오는 아쉬움은 아닐꺼 같습니다. 기간 내에 최선을 다했다고 생각하고 나름 잘 마무리지었다고 생각합니다. 인사담당자님과 실무자님, 면접관님들에게 감사를 표하며 결과 기다리고 있겠습니다. 감사합니다
+  
