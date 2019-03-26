@@ -97,7 +97,7 @@ public class HouFncSerApiWebController {
 
         houFncSuppStatRepository.saveAll(al);
         
-		return "Done";
+		return "{\"result\":\"success\"}";
 	}
 
 	private InstituteRepository instituteRepository;
