@@ -1,20 +1,21 @@
 
 
+
 # 카카오페이 사전 과제 주택 금융 서비스 API 개발
 ### HouseFinanceService
 
 
 - 구동 전 디비 사전 작업으로 테이블 생성 및 기초데이터 인서트를 하기 위한 쿼리가 존재하는 위치 (파일 3개)
 
-   HouseFinanceService\src\main\resources\files\기본디비생성쿼리.sql
+   **HouseFinanceService\src\main\resources\files\기본디비생성쿼리.sql**
    
-   HouseFinanceService\src\main\resources\files\금융기관인서트쿼리2019-03-26 23-57-45.sql
+   **HouseFinanceService\src\main\resources\files\금융기관인서트쿼리2019-03-26 23-57-45.sql**
    
-   HouseFinanceService\src\main\resources\files\롤인서트쿼리2019-03-26 23-59-45.sql
+   **HouseFinanceService\src\main\resources\files\롤인서트쿼리2019-03-26 23-59-45.sql**
 
 - JWT 를 하기 위해 서버에 요청시 필요한 유저 JSON 형식의 정보 (파일 1개)
 
-   HouseFinanceService\src\main\resources\files\JWT_유저JSON_양식.txt
+   **HouseFinanceService\src\main\resources\files\JWT_유저JSON_양식.txt**
    
 1. 개발 프레임워크 
 
