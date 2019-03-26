@@ -89,7 +89,7 @@
     
     - restful 서비스(위의 5개)로 작성한 api 에 해당롤을 주어서 해당롤이 아니거나, 로그아웃, 토큰이 잘못되어 있다면 호출이 안되도록 수정
     
-3.  빌드 및 실행 방법
+3. 빌드 및 실행 방법
 
    - 해당 소스 파일 다운로드 (github https://github.com/seongmu/HouseFinanceService.git) 
    
