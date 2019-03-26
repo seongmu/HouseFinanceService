@@ -115,6 +115,16 @@
 
       INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 
-   - 회원가입
-   
+   - 회원가입 : Postman 에서 Post 방식, url : localhost:8080/house/auth/signup, header Content-Type : application/json, 
+   Body 에는 아래처럼 세팅한다
+{
+	"name":"Jack",
+	"username":"jackgkz",
+	"email":"jack@grokonez.com",
+	"role":["user"],
+	"password":"123456789",
+	"userid":"jack1"
+}
+
+
    
