@@ -160,7 +160,7 @@
 	 "userid":"jack1"
       }
       
-      - Postman 의 Response 에 토큰이 json 형식으로 전달
+      - Postman 의 Response 에 토큰이 json 형식으로 전달 (얻은 토큰을 restful서비스api 호출할때 헤더에 넣어서 사용할것)
       
       - username 이 원래 key 값으로 사용되었으나 userid를 신규로 추가하여 정상적으로 동작하는지 확인하기 위해 3개로 처리
       
@@ -168,7 +168,7 @@
    
       - Postman 에서 Get 방식으로 변경
       
-      - Header 에 기존의 Content-Type : application/json 외에 Authorization : "Bearer " + "위의 로그인에서 나온토큰" 을 입력 (참고로 Bearer 다음에 공백 한칸 있음)
+      - Headers 에 기존의 Content-Type : application/json 을 체크해제 하거나 삭제하고, Authorization : "Bearer " + "위의 로그인에서 나온토큰" 을 입력 (참고로 Bearer 다음에 공백 한칸 있음)
       
         ex) Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYWNrMSIsImlhdCI6MTU1MzQ2NzUzMiwiZXhwIjoxNTUzNTUzOTMyfQ.ATASD2R5bsWBV2YwtmL1yHLRE6Fe-aPu7BTHu9rYNZNt232DGFiu1zgUMu2Bo1AY-3HpuBsBRn6-urf6DE29UA 
    
