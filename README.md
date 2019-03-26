@@ -29,8 +29,7 @@
     - 제약 사항에 주택금융공급기관은 따로 디자인한다고 하여 테이블 새로 하나 생성(테이블명 : institute, 칼럼명 : institute_code, institute_name)
     
     - 주어진 데이터가 없어서 해당금융기관에 임의로 코드를 주어서 코드, 금융기관명으로 매핑된 데이터 쿼리로 인서트
-      '''
-      
+            
       insert into institute(INSTITUTE_CODE, INSTITUTE_NAME) values('bnk3725', '주택도시기금');
       
       insert into institute(INSTITUTE_CODE, INSTITUTE_NAME) values('bnk3726', '국민은행');
@@ -48,8 +47,7 @@
       insert into institute(INSTITUTE_CODE, INSTITUTE_NAME) values('bnk3732', '외환은행');
       
       insert into institute(INSTITUTE_CODE, INSTITUTE_NAME) values('bnk3733', '기타은행');
-      
-      '''
+            
       
     - 금융기관 전체 select
     
