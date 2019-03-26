@@ -190,7 +190,7 @@
    
       - URL : localhost:8080/house/auth/refresh
       
-      - 위의 로그인과 나머지는 일치하나 Authorization 에 "Bearer Token " + "위의 로그인에서 나온토큰" 을 입력 (참고로 Token 뒤에 공백 한칸)
+      - 위의 restful api 호출과 나머지는 일치하나 Authorization 에 "Bearer Token " + "위의 로그인에서 나온토큰" 을 입력 (참고로 Token 뒤에 공백 한칸)
       
          ex) Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYWNrMSIsImlhdCI6MTU1MzQ2NzUzMiwiZXhwIjoxNTUzNTUzOTMyfQ.ATASD2R5bsWBV2YwtmL1yHLRE6Fe-aPu7BTHu9rYNZNt232DGFiu1zgUMu2Bo1AY-3HpuBsBRn6-urf6DE29UA
 
