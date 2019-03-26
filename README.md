@@ -146,11 +146,12 @@
 	 "userid":"jack1"
       }
       
+      - username 이 원래 key 값으로 사용되었으나 userid를 신규로 추가하여 정상적으로 동작하는지 확인하기 위해 3개로 처리 
    4. 해당함수 5개 api 수행
    
       - Postman 에서 Get 방식으로 변경
       
-      - Header 에 기존의 Content-Type : application/json 외에 Authorization : "Bear " + "위의 로그인에서 나온토큰 입력" 을 추가(참고로 Bear 다음에 공백 한칸 있음)
+      - Header 에 기존의 Content-Type : application/json 외에 Authorization : "Bearer " + "위의 로그인에서 나온토큰 입력" 을 추가(참고로 Bearer 다음에 공백 한칸 있음)
       
         ex) Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYWNrMSIsImlhdCI6MTU1MzQ2NzUzMiwiZXhwIjoxNTUzNTUzOTMyfQ.ATASD2R5bsWBV2YwtmL1yHLRE6Fe-aPu7BTHu9rYNZNt232DGFiu1zgUMu2Bo1AY-3HpuBsBRn6-urf6DE29UA 
    
