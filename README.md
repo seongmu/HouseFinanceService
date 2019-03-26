@@ -131,6 +131,14 @@
 	 "userid":"jack1"
       }
       
+   - 로그인
+      위와 같은 방식으로 url 과 데이터 세팅만 다르다 url : localhost:8080/house/auth/signin
+      
+      {
+	 "username":"jackgkz",
+	 "password":"123456789",
+	 "userid":"jack1"
+      }
 
 
    
