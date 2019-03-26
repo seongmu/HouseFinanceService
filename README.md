@@ -117,9 +117,14 @@
       INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 
    - 회원가입
-      Postman 에서 Post 방식, url : localhost:8080/house/auth/signup, headers에 Content-Type : application/json, 
+   
+      - Postman 에서 Post 방식
       
-      Body에 raw 선택 json(application/json) 선택후 후 데이터는 아래처럼 세팅하고 Send (파일로 양식 첨부 )
+      - url : localhost:8080/house/auth/signup
+      
+      - headers에 Content-Type : application/json
+      
+      - Body에 raw 선택 json(application/json) 선택후 후 데이터는 아래처럼 세팅하고 Send (파일로 양식 첨부 )
       
       
       {
