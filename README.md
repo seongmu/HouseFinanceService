@@ -88,3 +88,33 @@
     - restful 서비스(위의 5개)를 호출할때 해당 토큰으로 유저 정보를 제대로 가져오는지 확인
     
     - restful 서비스(위의 5개)로 작성한 api 에 해당롤을 주어서 해당롤이 아니거나, 로그아웃, 토큰이 잘못되어 있다면 호출이 안되도록 수정
+    
+3.  빌드 및 실행 방법
+
+   - 해당 소스 파일 다운로드 (github https://github.com/seongmu/HouseFinanceService.git) 
+   
+   - STS 실행
+   
+   - 다운로드 받은 소스 파일 import
+   
+   - 자동으로 maven 다운로드가 실행되지만 안되는 경우 maven update 하여 모든 jar 파일 다운로드 (제대로 다운 안되면 구동시 에러 발생)
+   
+   - STS 에 기본으로 탑재되어 있는 서버로 실행 (Boot Dashboard 라는 view를 띄워 놓으면 잘 보인다)
+   
+   - 서버가 중간에 올라가다 에러가 발생시 마리아디비에 해당 데이터베이스와 해당테이블을 create (필요한 쿼리문 sql 파일로 첨부함)
+   
+   - 서버가 구동되었으면 크롬에 설치한 Postman 실행
+   
+   - 테스트 순서는 기본데이터(롤) 인서트 --> 회원가입 --> 로그인 --> 해당 api (5개) 순서대로 수행 --> refresh 발급 수행
+   
+   - 롤 인서트 
+   
+      INSERT INTO roles(name) VALUES('ROLE_USER');
+   
+      INSERT INTO roles(name) VALUES('ROLE_PM');
+
+      INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+
+   - 회원가입
+   
+   
