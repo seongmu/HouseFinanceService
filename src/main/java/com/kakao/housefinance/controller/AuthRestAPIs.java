@@ -141,6 +141,6 @@ public class AuthRestAPIs {
         user.setRoles(roles);
         userRepository.save(user);
 
-        return ResponseEntity.ok().body("User registered successfully!");
+        return ResponseEntity.ok().body("{\"result\":\"User registered successfully!\"}");
     }
 }
