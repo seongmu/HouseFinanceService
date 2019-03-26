@@ -6,7 +6,7 @@
 
 - 구동 전 디비 사전 작업으로 테이블 생성 및 기초데이터 인서트를 하기 위한 쿼리가 존재하는 위치 (파일 3개)
 
-   __HouseFinanceService\src\main\resources\files\기본디비생성쿼리.sql
+   HouseFinanceService\src\main\resources\files\__기본디비생성쿼리.sql__
    
    HouseFinanceService\src\main\resources\files\금융기관인서트쿼리2019-03-26 23-57-45.sql
    
