@@ -3,7 +3,7 @@
 # HouseFinanceService
 카카오페이 사전 과제 주택 금융 서비스 API 개발
 
-- 구동 전 디비 사전 작업으로 테이블 생성 및 기초데이터 인서트를 하기 위한 쿼리가 존재하는 위치 (3개)
+- 구동 전 디비 사전 작업으로 테이블 생성 및 기초데이터 인서트를 하기 위한 쿼리가 존재하는 위치 (파일 3개)
 
    HouseFinanceService\src\main\resources\files\기본디비생성쿼리.sql
    
@@ -11,6 +11,10 @@
    
    HouseFinanceService\src\main\resources\files\롤인서트쿼리2019-03-26 23-59-45.sql
 
+- JWT 를 하기 위해 서버에 요청시 필요한 유저 JSON 형식의 정보 (파일 1개)
+
+   HouseFinanceService\src\main\resources\files\JWT_유저JSON_양식.txt
+   
 1. 개발 프레임워크 
 
    - 개발 툴 : Spring boot (STS 설치 https://spring.io/tools3/sts/all)
@@ -132,7 +136,7 @@
       
       - headers에 Content-Type : application/json
       
-      - Body에 raw 선택 json(application/json) 선택후 후 데이터는 아래처럼 세팅하고 Send 클릭 (파일로 양식 첨부 )
+      - Body에 raw 선택 json(application/json) 선택후 후 데이터는 아래처럼 세팅하고 Send 클릭 (JWT_유저JSON_양식.txt 참고)
       
       
       {
@@ -146,7 +150,7 @@
       
    3. 로그인
    
-      - 위와 같은 방식으로 url 과 데이터 세팅만 다르다 url : localhost:8080/house/auth/signin
+      - 위와 같은 방식으로 url 과 데이터 세팅(JWT_유저JSON_양식.txt 참고) 만 다르다. url : localhost:8080/house/auth/signin 
       
       {
 	 "username":"jackgkz",
