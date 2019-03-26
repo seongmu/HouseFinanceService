@@ -74,3 +74,17 @@
     - 각각 뽑은 두개의 쿼리를 union 으로 합쳐서 select
     
     - Hibernate 에서 native query 이용
+    
+   2-6. API 인증을 위해 JWT(Json Web Token)를 이용해서 Token 기반 API 인증 기능
+   
+    - 주어진 데이터베이스가 없어 임의로 3개의 테이블을 생성(roles, user_roles, users)
+    
+    - 패스워드는 암호화 되서 저장 되도록 기능 생성
+    
+    - 로그인 시 토큰 생성하도록 요청된 userid 와 password 를 조사하여 올바르면 토큰 특정 secret으로 서명 하여 생성
+    
+    - refresh 토큰 생성시 Authorization 헤더에 이미 기존의 토큰이 들어가 있으므로 Bear Token 을 Authorization 에 입력한다면 기존의 토큰이 날아가서 회원 정보를 알 수 없으므로, 기존의 토큰 앞에 접두어로 붙이는 것으로 결정하고 접두어로 붙어서 온다면 refresh 토큰 생성
+    
+    - restful 서비스(위의 5개)를 호출할때 해당 토큰으로 유저 정보를 제대로 가져오는지 확인
+    
+    - restful 서비스(위의 5개)로 작성한 api 에 해당롤을 주어서 해당롤이 아니거나, 로그아웃, 토큰이 잘못되어 있다면 호출이 안되도록 수정
