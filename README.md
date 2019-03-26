@@ -88,7 +88,7 @@
     
     - restful 서비스(위의 5개)를 호출할때 해당 토큰으로 유저 정보를 제대로 가져오는지 확인
     
-    - restful 서비스(위의 5개)로 작성한 api 에 해당롤을 주어서 해당롤이 아니거나, 로그아웃, 토큰이 잘못되어 있다면 호출이 안되도록 수정
+    - restful 서비스(위의 5개)로 작성한 api 에 해당롤을 주어서 해당롤이 아니거나, 토큰이 없거나 잘못되어 있다면 호출이 안되도록 수정
     
 3. 빌드 및 실행 방법
 
@@ -146,16 +146,31 @@
 	 "userid":"jack1"
       }
       
-      - username 이 원래 key 값으로 사용되었으나 userid를 신규로 추가하여 정상적으로 동작하는지 확인하기 위해 3개로 처리 
+      - Postman 의 Response 에 토큰이 json 형식으로 전달
+      
+      - username 이 원래 key 값으로 사용되었으나 userid를 신규로 추가하여 정상적으로 동작하는지 확인하기 위해 3개로 처리
+      
    4. 해당함수 5개 api 수행
    
       - Postman 에서 Get 방식으로 변경
       
-      - Header 에 기존의 Content-Type : application/json 외에 Authorization : "Bearer " + "위의 로그인에서 나온토큰 입력" 을 추가(참고로 Bearer 다음에 공백 한칸 있음)
+      - Header 에 기존의 Content-Type : application/json 외에 Authorization : "Bearer " + "위의 로그인에서 나온토큰" 을 입력 (참고로 Bearer 다음에 공백 한칸 있음)
       
         ex) Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYWNrMSIsImlhdCI6MTU1MzQ2NzUzMiwiZXhwIjoxNTUzNTUzOTMyfQ.ATASD2R5bsWBV2YwtmL1yHLRE6Fe-aPu7BTHu9rYNZNt232DGFiu1zgUMu2Bo1AY-3HpuBsBRn6-urf6DE29UA 
    
-   
+      - URL 다음 순서대로 Send 하며 테스트
+          
+	 1. localhost:8080/house/saveAllHouFncSuppStat
+	 
+	 2. localhost:8080/house/findAllInstitute
+	 
+	 3. localhost:8080/house/findAllSumHouFncSuppStat
+	 
+	 4. localhost:8080/house/findMaxSuppAmtInst
+	 
+	 5. localhost:8080/house/findMinMaxKeAvg
+	 
+      - Postman 의 Response 에 select 한 데이터가 json 형식으로 전달 	 
    
 
 
