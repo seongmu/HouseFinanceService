@@ -12,6 +12,7 @@
 - 개발 실행도구 : Postman (크롬 확장프로그램 설치 https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=ko)
 
 2. 문제 해결 전략
+
   2-1. 데이터 파일에서 각 레코드를 데이터베이스에 저장하는 API 
 
     - 서버에서 파일이 올라와 있는 위치를 찾은 후에 파일에서 데이터를 읽은 후에 1 라인 단위로 읽어서 저장
