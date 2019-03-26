@@ -1,0 +1,46 @@
+// 회원가입 json 3개 : POST 로 전송할때 사용
+{
+	"name":"Jack",
+	"username":"jackgkz",
+	"email":"jack@grokonez.com",
+	"role":["user"],
+	"password":"123456789",
+	"userid":"jack1"
+}
+
+{
+	"name":"Adam",
+	"username":"adamgkz",
+	"email":"adam@grokonez.com",
+	"role":["user", "pm"],
+	"password":"123456789",
+	"userid":"adam1"
+}
+
+{
+	"name":"Thomas",
+	"username":"tomasgkz",
+	"email":"tomas@grokonez.com",
+	"role":["admin"],
+	"password":"123456789",
+	"userid":"1"
+}						
+
+// 로그인 json 3개 : POST 로 전송할때 사용
+{
+	"username":"jackgkz",
+	"password":"123456789",
+	"userid":"jack1"
+}
+
+{
+	"username":"adamgkz",
+	"password":"123456789",
+	"userid":"adam1"
+}
+
+{
+	"username":"tomasgkz",	
+	"password":"123456789",
+	"userid":"1"
+}
