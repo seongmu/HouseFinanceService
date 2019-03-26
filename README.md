@@ -98,7 +98,7 @@
     
     - 로그인 시 토큰 생성하도록 요청된 userid 와 password 를 조사하여 올바르면 토큰 특정 secret으로 서명 하여 생성
     
-    - refresh 토큰 생성시 Authorization 헤더에 이미 기존의 토큰이 들어가 있으므로 Bear Token 을 Authorization 에 입력한다면 기존의 토큰이 날아가서 회원 정보를 알 수 없으므로, 기존의 토큰 앞에 접두어로 붙이는 것으로 결정하고 접두어로 붙어서 온다면 refresh 토큰 생성
+    - **refresh 토큰 생성시 Authorization 헤더에 이미 기존의 토큰이 들어가 있으므로 Bear Token 을 Authorization 에 입력한다면 기존의 토큰이 날아가서 회원 정보를 알 수 없으므로, 기존의 토큰 앞에 접두어로 붙이는 것으로 결정하고 접두어로 붙어서 온다면 refresh 토큰 생성**
     
     - restful 서비스(위의 5개)를 호출할때 해당 토큰으로 유저 정보를 제대로 가져오는지 확인
     
