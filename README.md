@@ -3,6 +3,10 @@
 # HouseFinanceService
 카카오페이 사전 과제 주택 금융 서비스 API 개발
 
+- 구동 전 디비 사전 작업으로 테이블 생성 및 기초데이터 인서트를 하기 위한 폴더 위치
+
+   C:\STS\HouseFinanceService\src\main\resources\files 밑에 있는 sql 파일 3개 먼저 실행시킬 
+
 1. 개발 프레임워크 
 
    - 개발 툴 : Spring boot (STS 설치 https://spring.io/tools3/sts/all)
