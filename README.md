@@ -1,4 +1,5 @@
 
+
 # HouseFinanceService
 카카오페이 사전 과제 주택 금융 서비스 API 개발
 
@@ -120,7 +121,7 @@
       
       Body에 raw 선택 json(application/json) 선택후 후 데이터는 아래처럼 세팅
       
-      '''
+      
       {
          "name":"Jack",
 	 "username":"jackgkz",
@@ -129,7 +130,7 @@
 	 "password":"123456789",
 	 "userid":"jack1"
       }
-      '''
+      
 
 
    
