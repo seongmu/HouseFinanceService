@@ -150,7 +150,7 @@
    
       - Postman 에서 Get 방식으로 변경
       
-      - Header 에 기존의 Content-Type : application/json 외에 Authorization : "Bear " + "위의 로그인에서 나온토큰 입력" 을 추가
+      - Header 에 기존의 Content-Type : application/json 외에 Authorization : "Bear " + "위의 로그인에서 나온토큰 입력" 을 추가(참고로 Bear 다음에 공백 한칸 있음)
       
         ex) Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYWNrMSIsImlhdCI6MTU1MzQ2NzUzMiwiZXhwIjoxNTUzNTUzOTMyfQ.ATASD2R5bsWBV2YwtmL1yHLRE6Fe-aPu7BTHu9rYNZNt232DGFiu1zgUMu2Bo1AY-3HpuBsBRn6-urf6DE29UA 
    
