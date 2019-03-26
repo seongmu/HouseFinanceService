@@ -108,7 +108,7 @@
    
    - 테스트 순서는 기본데이터(롤) 인서트 --> 회원가입 --> 로그인 --> 해당 api (5개) 순서대로 수행 --> refresh 수행
    
-   - 롤 인서트 
+   1. 롤 table 에 데이터 인서트 
    
       INSERT INTO roles(name) VALUES('ROLE_USER');
    
@@ -116,7 +116,7 @@
 
       INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 
-   1. 회원가입
+   2. 회원가입
    
       - Postman 에서 Post 방식
       
@@ -136,7 +136,7 @@
 	 "userid":"jack1"
       }
       
-   2. 로그인
+   3. 로그인
    
       - 위와 같은 방식으로 url 과 데이터 세팅만 다르다 url : localhost:8080/house/auth/signin
       
@@ -145,6 +145,17 @@
 	 "password":"123456789",
 	 "userid":"jack1"
       }
+      
+   4. 해당함수 5개 api 수행
+   
+      - Postman 에서 Get 방식으로 변경
+      
+      - Header 에 기존의 Content-Type : application/json 외에 Authorization : "Bear " + "위의 로그인에서 나온토큰 입력" 을 추가
+      
+        ex) Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYWNrMSIsImlhdCI6MTU1MzQ2NzUzMiwiZXhwIjoxNTUzNTUzOTMyfQ.ATASD2R5bsWBV2YwtmL1yHLRE6Fe-aPu7BTHu9rYNZNt232DGFiu1zgUMu2Bo1AY-3HpuBsBRn6-urf6DE29UA 
+   
+   
+   
 
 
    
