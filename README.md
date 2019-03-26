@@ -160,17 +160,24 @@
    
       - URL 다음 순서대로 Send 하며 테스트
           
-	 1. localhost:8080/house/saveAllHouFncSuppStat
+         1. localhost:8080/house/saveAllHouFncSuppStat
 	 
-	 2. localhost:8080/house/findAllInstitute
+         2. localhost:8080/house/findAllInstitute
 	 
-	 3. localhost:8080/house/findAllSumHouFncSuppStat
+         3. localhost:8080/house/findAllSumHouFncSuppStat
 	 
-	 4. localhost:8080/house/findMaxSuppAmtInst
+         4. localhost:8080/house/findMaxSuppAmtInst
 	 
-	 5. localhost:8080/house/findMinMaxKeAvg
+         5. localhost:8080/house/findMinMaxKeAvg
 	 
       - Postman 의 Response 에 select 한 데이터가 json 형식으로 전달 	 
+      
+   5. refresh 수행
+   
+      - URL : localhost:8080/house/auth/refresh
+      
+      - 위의 로그인과 나머지는 일치하나 Authorization 에 "Bearer Token " + "위의 로그인에서 나온토큰" 을 입력 (참고로 Token 뒤에 공백 한칸)
+         ex) Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYWNrMSIsImlhdCI6MTU1MzQ2NzUzMiwiZXhwIjoxNTUzNTUzOTMyfQ.ATASD2R5bsWBV2YwtmL1yHLRE6Fe-aPu7BTHu9rYNZNt232DGFiu1zgUMu2Bo1AY-3HpuBsBRn6-urf6DE29UA
    
 
 
