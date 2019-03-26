@@ -106,7 +106,7 @@
    
    - 서버가 구동되었으면 크롬에 설치한 Postman 실행
    
-   - 테스트 순서는 기본데이터(롤) 인서트 --> 회원가입 --> 로그인 --> 해당 api (5개) 순서대로 수행 --> refresh 발급 수행
+   - 테스트 순서는 기본데이터(롤) 인서트 --> 회원가입 --> 로그인 --> 해당 api (5개) 순서대로 수행 --> refresh 수행
    
    - 롤 인서트 
    
@@ -116,7 +116,7 @@
 
       INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 
-   - 회원가입
+   1. 회원가입
    
       - Postman 에서 Post 방식
       
@@ -124,7 +124,7 @@
       
       - headers에 Content-Type : application/json
       
-      - Body에 raw 선택 json(application/json) 선택후 후 데이터는 아래처럼 세팅하고 Send (파일로 양식 첨부 )
+      - Body에 raw 선택 json(application/json) 선택후 후 데이터는 아래처럼 세팅하고 Send 클릭 (파일로 양식 첨부 )
       
       
       {
@@ -136,8 +136,9 @@
 	 "userid":"jack1"
       }
       
-   - 로그인
-      위와 같은 방식으로 url 과 데이터 세팅만 다르다 url : localhost:8080/house/auth/signin
+   2. 로그인
+   
+      - 위와 같은 방식으로 url 과 데이터 세팅만 다르다 url : localhost:8080/house/auth/signin
       
       {
 	 "username":"jackgkz",
