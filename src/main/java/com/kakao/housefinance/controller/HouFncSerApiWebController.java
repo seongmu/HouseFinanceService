@@ -4,13 +4,25 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.json.simple.JSONObject;
+//import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.w3c.dom.Document;
 
@@ -174,6 +186,125 @@ public class HouFncSerApiWebController {
 		result = String.format("%s%n]}", result.substring(0, result.lastIndexOf(",")));
 		
 		return result;		
+		
+	}
+	
+	// 6. 특정 은행의 특정 달에 대해서 2018 년도 해당 달에 금융지원 금액을 예측하는 API 개발
+	@PostMapping("/findPredSuppAmount")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public String findPredSuppAmount(HttpServletRequest request, @RequestParam() Map<String, Object> paramMap) {
+		
+		StringBuffer json = new StringBuffer();
+	    String line = null;
+	 
+	    try {
+	        BufferedReader reader = request.getReader();
+	        while((line = reader.readLine()) != null) {
+	            json.append(line);
+	        }
+	 
+	    }catch(Exception e) {
+	        System.out.println("Error reading JSON string: " + e.toString());
+	    }
+
+	    
+	    Object obj = null;
+		JSONObject jsonObj = null;
+		
+	    try {
+	    	JSONParser parser = new JSONParser();
+			obj = parser.parse( json.toString() );
+			jsonObj = (JSONObject) obj;
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+		
+		String bank = (String) jsonObj.get("bank".toString());
+		String month = (String) jsonObj.get("month");
+				
+		List<HouFncSuppStat> list = houFncSuppStatRepository.findPredSuppAmountByYearAsc(month);
+			
+		ArrayList<Long> alDelMinMax = new ArrayList<Long>();
+		ArrayList<Long> alDelMinMax2 = new ArrayList<Long>();
+		
+		// 해당월 해당금융기관 합계 구하기
+		for (int i = 0; i < list.size(); i++) {
+			switch (bank) {
+			case "주택도시기금":
+				alDelMinMax.add( list.get(i).getJutaeck() );
+				alDelMinMax2.add( list.get(i).getJutaeck() );
+				break;
+			case "국민은행":
+				alDelMinMax.add( list.get(i).getKookmin() );
+				alDelMinMax2.add( list.get(i).getKookmin() );
+				break;
+
+			case "우리은행":
+				alDelMinMax.add( list.get(i).getWoori() );
+				alDelMinMax2.add( list.get(i).getWoori() );
+				break;
+
+			case "신한은행":
+				alDelMinMax.add( list.get(i).getShinhan() );
+				alDelMinMax2.add( list.get(i).getShinhan() );
+				break;
+
+			case "한국시티은행":
+				alDelMinMax.add( list.get(i).getCiti() );
+				alDelMinMax2.add( list.get(i).getCiti() );
+				break;
+
+			case "하나은행":
+				alDelMinMax.add( list.get(i).getHana() );
+				alDelMinMax2.add( list.get(i).getHana() );
+				break;
+
+			case "농협은행/수협은행":
+				alDelMinMax.add( list.get(i).getNonghyup() );
+				alDelMinMax2.add( list.get(i).getNonghyup() );
+				break;
+
+			case "기타은행":
+				alDelMinMax.add( list.get(i).getEtc() );
+				alDelMinMax2.add( list.get(i).getEtc() );
+				break;
+			default:
+				break;
+			}
+		}
+		
+		// 이제 기하평균 구하기
+		BigDecimal pre = new BigDecimal(alDelMinMax.get(alDelMinMax.size() - 1).toString());
+		BigDecimal next = new BigDecimal(alDelMinMax.get(0).toString());
+		BigDecimal first = pre.divide(next, MathContext.DECIMAL32);
+		
+		BigDecimal second = (new BigDecimal("1".toString())).divide(new BigDecimal("10".toString()), MathContext.DECIMAL32); 
+		
+		BigDecimal lg = new BigDecimal(String.valueOf(Math.pow(first.doubleValue(), second.doubleValue()))).subtract(new BigDecimal("1"));
+		
+		// 예상값 구하기
+		BigDecimal re = (new BigDecimal(alDelMinMax.get(0).toString())).multiply(((new BigDecimal("1")).add(lg)).pow(13));
+		
+		re = re.setScale(0, BigDecimal.ROUND_HALF_UP);
+		
+		List<Institute> list2 = instituteRepository.findAllByOrderByIdAsc();
+		String sCode = "";
+		for (Institute institute : list2) {
+			if (institute.getInstituteName().equals(bank)) {
+				sCode = institute.getInstituteCode(); 
+				break;
+			}
+		}
+		
+		System.out.println(re);
+		
+		// JSON 형식으로 변환
+		String resultJson = String.format("{\"bank\":\"%s\",\"year\":\"%s\",\"month\":\"%s\",\"amount\":\"%s\"}",
+				sCode, "2018", month, re);
+		
+		return resultJson;		
 		
 	}
 	
