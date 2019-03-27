@@ -2,9 +2,11 @@ package com.kakao.housefinance.repo;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.kakao.housefinance.model.HouFncSuppStat;
 
@@ -249,5 +251,8 @@ public interface HouFncSuppStatRepository extends JpaRepository<HouFncSuppStat, 
 			" ORDER BY SUM(KE)/12 DESC"+
 			" LIMIT 1)", nativeQuery = true)
 	List<Object[]> findMinMaxKeAvg();
+
 	
+	@Query(value = "SELECT * FROM HOU_FNC_SUPP_STAT WHERE MONTH = :month", nativeQuery = true)
+	List<HouFncSuppStat> findPredSuppAmountByYearAsc(@Param("month") String month);
 }
