@@ -192,7 +192,7 @@
 	 
          5. localhost:8080/house/findMinMaxKeAvg
 	 
-	 6. localhost:8080/house/findPredSuppAmount(예측 서비스 : 이것만 포스트 방식으로 하여 데이터 json으로 전달할것)
+	  6. localhost:8080/house/findPredSuppAmount(예측 서비스 : 이것만 포스트 방식으로 하여 데이터 json으로 전달할것)
 	 
       - Postman 의 Response 에 select 한 데이터가 json 형식으로 전달 	 
       
