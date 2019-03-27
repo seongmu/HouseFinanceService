@@ -104,6 +104,14 @@
     
     - restful 서비스(위의 5개)로 작성한 api 에 해당롤을 주어서 해당롤이 아니거나, 토큰이 없거나 잘못되어 있다면 호출이 안되도록 수정
     
+   2-7. 2018년 금유 기관별 금융지원금액 예상 서비스 API
+    
+    - 기하평균을 이용하여 금액을 산출
+    
+    - 주택금융 공급 현황 분석 테이블을 월별로 모두 긁어온후 자바단에서 로직 구현
+    
+    - 로직 구현 후 금융기관지원 목록을 조회하여 코드값을 얻어온 후 데이터 완성하여 json 으로 
+    
 3. 빌드 및 실행 방법
 
    - 해당 소스 파일 다운로드 (github https://github.com/seongmu/HouseFinanceService.git) 
@@ -120,7 +128,7 @@
    
    - 서버가 구동되었으면 크롬에 설치한 Postman 실행
    
-   - 테스트 순서는 기본데이터(롤) 인서트 --> 회원가입 --> 로그인 --> 해당 api (5개) 순서대로 수행 --> refresh 수행
+   - 테스트 순서는 기본데이터(롤) 인서트 --> 회원가입 --> 로그인 --> 해당 api (6개) 순서대로 수행 --> refresh 수행
    
    1. 롤 table 에 데이터 인서트 (위에서 롤인서트쿼리2019-03-26 23-59-45.sql 파일 찾아서 이미 인서트 했다면 해당 과정은 넘어가도 된다)
    
@@ -183,6 +191,8 @@
          4. localhost:8080/house/findMaxSuppAmtInst
 	 
          5. localhost:8080/house/findMinMaxKeAvg
+	 
+	 6. localhost:8080/house/findPredSuppAmount(예측 서비스 : 이것만 포스트 방식으로 하여 데이터 json으로 전달할것)
 	 
       - Postman 의 Response 에 select 한 데이터가 json 형식으로 전달 	 
       
